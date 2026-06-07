@@ -26,9 +26,7 @@
   <!-- ====================== NAVIGATION ====================== -->
   <header class="nav" id="nav">
     <a href="#accueil" class="nav__brand" aria-label="Accueil Division Hi Shin">
-      <svg class="nav__emblem" viewBox="0 0 400 400" aria-hidden="true">
-        <use href="#emblem-symbol"></use>
-      </svg>
+      <svg class="nav__emblem" viewBox="0 0 400 400" aria-hidden="true"><use href="#emblem-symbol"></use></svg>
       <span class="nav__brand-text">
         <strong>HI SHIN</strong>
         <em>DIVISION</em>
@@ -38,9 +36,11 @@
     <nav class="nav__links" id="navLinks">
       <a href="#accueil" class="nav__link is-active">Accueil</a>
       <a href="#division" class="nav__link">La Division</a>
-      <a href="#structure" class="nav__link">Structure</a>
+      <a href="#unites" class="nav__link">Unités</a>
+      <a href="#doctrine" class="nav__link">Doctrine</a>
       <a href="#avenir" class="nav__link">Avenir</a>
       <a href="#academie" class="nav__link">Académie</a>
+      <a href="#forge" class="nav__link">Forge</a>
       <a href="#valeurs" class="nav__link">Valeurs</a>
     </nav>
 
@@ -48,6 +48,8 @@
       <span></span><span></span><span></span>
     </button>
   </header>
+
+  <main data-edit-root>
 
   <!-- ====================== HERO / ACCUEIL ====================== -->
   <section class="hero" id="accueil">
@@ -57,9 +59,7 @@
 
     <div class="hero__inner">
       <div class="hero__emblem-wrap reveal">
-        <svg class="hero__emblem" viewBox="0 0 400 400" role="img" aria-label="Emblème Division Hi Shin">
-          <use href="#emblem-symbol"></use>
-        </svg>
+        <svg class="hero__emblem" viewBox="0 0 400 400" role="img" aria-label="Emblème Division Hi Shin"><use href="#emblem-symbol"></use></svg>
         <div class="hero__emblem-glow"></div>
       </div>
 
@@ -87,195 +87,398 @@
     </a>
   </section>
 
-  <!-- ====================== LA DIVISION ====================== -->
+  <!-- ====================== 01 · LA DIVISION ====================== -->
   <section class="section section--division" id="division">
     <div class="section__head reveal">
       <span class="section__index">01</span>
-      <span class="section__kicker">Origines &amp; Vision</span>
-      <h2 class="section__title">La Division Hi Shin</h2>
+      <span class="section__kicker">Division Hi Shin, c'est quoi ?</span>
+      <h2 class="section__title">À l'origine, une simple idée</h2>
       <div class="section__rule"><span>飛</span></div>
     </div>
+
+    <figure class="hs-figure reveal" data-kanji="飛">
+      <span class="hs-figure__tag">飛</span>
+      <img src="images/division.jpg" alt="La Division Hi Shin" loading="lazy" decoding="async" onerror="this.closest('.hs-figure').classList.add('is-missing')">
+      <figcaption>D'un simple cercle d'amis à un véritable bataillon au service de Konoha.</figcaption>
+    </figure>
 
     <div class="division__grid">
       <div class="division__lead reveal">
         <p class="lead">
-          La Division Hi Shin est née d'une simple idée&nbsp;: rassembler des shinobi
-          partageant les mêmes ambitions afin de construire quelque chose de plus grand
-          qu'eux-mêmes.
+          La Division Hi Shin était, à l'origine, un simple projet imaginé par
+          <strong>Shin Kurokaze</strong>. Son objectif était de rassembler un groupe d'amis
+          partageant la même ambition : évoluer ensemble au sein de Konoha, trouver leur place
+          dans une section et participer activement au développement du village.
         </p>
         <p>
-          Ce qui n'était autrefois qu'un petit groupe d'amis cherchant à progresser
-          ensemble est aujourd'hui devenu une véritable Division organisée, unie par des
-          valeurs de <strong>camaraderie</strong>, d'<strong>entraide</strong> et de
-          <strong>dépassement de soi</strong>.
+          Avec le temps, cette simple initiative a progressivement pris une ampleur bien plus
+          importante. Ce qui n'était autrefois qu'un cercle d'amis est devenu une véritable
+          Division, réunissant aujourd'hui plus d'une <strong>trentaine de membres</strong>
+          unis par des valeurs communes, un esprit de camaraderie et une volonté constante de
+          progresser ensemble.
         </p>
         <p>
-          À travers ce document, vous découvrirez l'histoire, les objectifs et le
-          fonctionnement de la Division Hi Shin, ainsi que les différentes structures qui
-          lui sont affiliées.
+          Désormais, la Division Hi Shin représente un véritable bataillon prêt à défendre
+          Konoha et à agir pour les intérêts du village. Au-delà d'une simple organisation,
+          elle est avant tout une <strong>famille</strong> : chaque membre y possède sa place
+          et son importance.
         </p>
       </div>
 
       <aside class="division__card reveal">
         <div class="division__card-glow"></div>
-        <h3 class="division__card-title">Au sein de cette présentation</h3>
-        <ul class="division__card-list">
-          <li><span class="dot"></span>L'histoire et l'évolution de la Division</li>
-          <li><span class="dot"></span>Son organisation militaire</li>
-          <li><span class="dot"></span>Ses unités spécialisées</li>
-          <li><span class="dot"></span>Ses méthodes de combat et de communication</li>
-          <li><span class="dot"></span>Ses ambitions pour l'avenir</li>
-          <li><span class="dot"></span>Le projet de l'Académie Hi Shin</li>
-        </ul>
+        <h3 class="division__card-title">Le Doyen — Raidan Kurobane</h3>
+        <p class="division__card-text">
+          Pour garantir notre stabilité et porter un regard extérieur expérimenté sur nos
+          activités, le sensei <strong>Raidan Kurobane</strong> occupe une position de doyen
+          au sein de la Division. Il veille sur notre évolution, supervise nos actions et
+          s'assure qu'aucun comportement nuisible ne puisse se développer parmi nous.
+        </p>
+        <p class="division__card-text">
+          Sa présence apporte équilibre et légitimité à notre groupe.
+        </p>
       </aside>
     </div>
+
+    <div class="stats reveal">
+      <div class="stat"><span class="stat__num">30<small>+</small></span><span class="stat__label">Membres unis</span></div>
+      <div class="stat"><span class="stat__num">1</span><span class="stat__label">Doyen · Raidan Kurobane</span></div>
+      <div class="stat"><span class="stat__num">飛</span><span class="stat__label">Fondée par Shin Kurokaze</span></div>
+      <div class="stat"><span class="stat__num">∞</span><span class="stat__label">Une même famille</span></div>
+    </div>
+
+    <p class="division__note reveal">
+      La Division cherche également à se rapprocher des sensei et shinobi haut gradés du
+      village afin de leur apporter son aide et d'accomplir des missions à leurs côtés — comme
+      ce fut déjà le cas, il y a plusieurs années, avec le sensei <strong>Chozuya</strong>.
+    </p>
   </section>
 
-  <!-- ====================== STRUCTURE / CE QUE VOUS DÉCOUVRIREZ ====================== -->
-  <section class="section section--structure" id="structure">
+  <!-- ====================== 02 · UNITÉS ====================== -->
+  <section class="section section--unites" id="unites">
     <div class="section__head reveal">
       <span class="section__index">02</span>
-      <span class="section__kicker">Anatomie de la Division</span>
-      <h2 class="section__title">Structure &amp; Spécialités</h2>
+      <span class="section__kicker">Organisation militaire</span>
+      <h2 class="section__title">Différentes Unités</h2>
       <p class="section__sub">
-        Grâce à la diversité de ses membres provenant de différentes sections, la Division
-        possède une vision globale du fonctionnement interne de Konoha.
+        Pour gérer la Division et fluidifier la transmission des informations, plusieurs
+        membres ont été nommés à la tête d'unités. Étant nombreux, la Hi Shin combat sous la
+        forme d'un véritable <strong>bataillon</strong>.
       </p>
     </div>
 
     <div class="pillars">
       <article class="pillar reveal">
-        <div class="pillar__num">壱</div>
-        <h3>Histoire &amp; Évolution</h3>
-        <p>D'un cercle d'amis à une Division structurée&nbsp;: le récit d'une volonté commune devenue force collective.</p>
+        <div class="pillar__num">令</div>
+        <h3>Le Commandement</h3>
+        <p>Seuls les Capitaines et le commandant communiquent directement, afin de relayer les informations avec efficacité.</p>
       </article>
-
       <article class="pillar reveal">
-        <div class="pillar__num">弐</div>
-        <h3>Organisation Militaire</h3>
-        <p>Une hiérarchie claire où chaque membre — combattant, stratège ou spécialiste — connaît sa place et son rôle.</p>
+        <div class="pillar__num">将</div>
+        <h3>Les Capitaines</h3>
+        <p>Placés à la tête des unités, ils mènent les combats et coordonnent leurs escouades sur le terrain.</p>
       </article>
-
       <article class="pillar reveal">
-        <div class="pillar__num">参</div>
-        <h3>Unités Spécialisées</h3>
-        <p>Des cellules dédiées au combat, au renseignement, au soin et à la diplomatie, opérant en parfaite coordination.</p>
+        <div class="pillar__num">軍</div>
+        <h3>Le Bataillon</h3>
+        <p>Nombreux et soudés, nous progressons à l'unisson, avançant pas à pas comme une seule force.</p>
       </article>
-
       <article class="pillar reveal">
-        <div class="pillar__num">肆</div>
-        <h3>Combat &amp; Communication</h3>
-        <p>Des méthodes éprouvées de coordination sur le terrain et de transmission rapide de l'information.</p>
+        <div class="pillar__num">陣</div>
+        <h3>La Ligne de Front</h3>
+        <p>Une ligne commune maintenue en permanence pour empêcher toute avancée ennemie.</p>
       </article>
     </div>
 
-    <div class="roles reveal">
-      <p class="roles__intro">
-        Chaque membre possède sa propre place au sein de la Division, qu'il soit&nbsp;:
+    <div class="banner-note reveal">
+      <span class="banner-note__mark">和</span>
+      <p>
+        La Division Hi Shin n'est pas là pour créer rivalité ou concurrence avec les autres
+        divisions du village. <strong>Notre objectif est de renforcer Konoha et de combattre à
+        ses côtés</strong>, non de nous opposer aux autres branches.
       </p>
-      <div class="roles__grid">
-        <span class="role-chip">Combattant</span>
-        <span class="role-chip">Stratège</span>
-        <span class="role-chip">Diplomate</span>
-        <span class="role-chip">Médecin</span>
-        <span class="role-chip">Instructeur</span>
-        <span class="role-chip">Spécialiste</span>
-      </div>
     </div>
   </section>
 
-  <!-- ====================== TOURNÉE VERS L'AVENIR ====================== -->
+  <!-- ====================== 03 · DOCTRINE MILITAIRE ====================== -->
+  <section class="section section--doctrine" id="doctrine">
+    <div class="doctrine__kanji" aria-hidden="true">戦</div>
+    <div class="section__head reveal">
+      <span class="section__index">03</span>
+      <span class="section__kicker">Doctrine &amp; ambitions</span>
+      <h2 class="section__title">L'Art de la Guerre</h2>
+      <p class="section__sub">Nos objectifs militaires, au service de Konoha et de sa stabilité.</p>
+    </div>
+
+    <div class="doctrine__grid">
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">砦</span><h3>Position militaire</h3></div>
+        <p>
+          Former des escouades compétentes pour toute mission — capture de territoire, traque
+          ou batailles. Nous visons la responsabilité d'un pays frontalier, le
+          <strong>Pays du Fer</strong>, et l'installation d'un quartier général servant de
+          rempart contre les attaques venues de l'arrière.
+        </p>
+      </article>
+
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">戦</span><h3>Bataillon de Guerre</h3></div>
+        <p>
+          Des escouades autosuffisantes capables de se soigner, de repérer et de communiquer.
+          <strong>On se soigne en avançant</strong> : une zone de soin figée est l'ouverture à
+          la défaite. Entraînement avec la Section Militaire et formation triangulaire —
+          trois escouades sous un seul commandement pour percer le flanc ennemi.
+        </p>
+      </article>
+
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">鉄</span><h3>Conquête du Pays du Fer</h3></div>
+        <p>
+          Gérer les frontières, analyser l'ennemi et prendre position sur le Hameau pour
+          surveiller les entrées. Nouer des ententes économiques et diplomatiques afin
+          d'offrir à ses habitants un étendard <strong>stable et noble</strong>, et d'assumer
+          la responsabilité du Pays du Fer pour Konoha.
+        </p>
+      </article>
+
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">危</span><h3>Missions à Haut Risque</h3></div>
+        <p>
+          La Hi Shin n'a pas froid aux yeux. Sauvetages en territoire ennemi, affrontement de
+          marionnettes d'un rang supérieur au nôtre, guerre déclarée à la
+          <strong>Main Blanche</strong> — qui a préféré payer Konoha plutôt que de subir notre
+          attaque. Polyvalents et précis, nous accomplissons notre devoir.
+        </p>
+      </article>
+
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">精</span><h3>L'Élite de Konoha</h3></div>
+        <p>
+          Un terme exigeant, mais que nous assumons. La Division se donne toujours à
+          <strong>100 %</strong> dans ce qu'elle entreprend, et fait preuve d'une discipline
+          et d'une rigueur sans faille. Devenir l'élite, c'est aussi un gage de sérieux.
+        </p>
+      </article>
+
+      <article class="doctrine-card reveal">
+        <div class="doctrine-card__top"><span class="doctrine-card__mark">武</span><h3>L'Équipement, priorité de guerre</h3></div>
+        <p>
+          Grâce à <strong>Enma Kinzetsu</strong>, excellent forgeron et enseignant, la forge
+          équipe le Haut Commandement puis l'armée. En lien avec les Sections Économique et
+          Militaire, elle prépare les bonnes listes d'équipement. <strong>L'objectif est la
+          victoire.</strong>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====================== 04 · AVENIR ====================== -->
   <section class="section section--avenir" id="avenir">
     <div class="avenir__kanji" aria-hidden="true">信</div>
     <div class="section__head reveal">
-      <span class="section__index">03</span>
+      <span class="section__index">04</span>
       <span class="section__kicker">Au service du village</span>
-      <h2 class="section__title">Une Division tournée vers l'avenir</h2>
+      <h2 class="section__title">L'Avenir de la Division</h2>
     </div>
 
     <div class="avenir__body reveal">
       <p class="lead">
-        La Division Hi Shin ne cherche ni la rivalité ni la domination sur les autres
-        branches du village. Son objectif est avant tout de
-        <strong>renforcer Konoha</strong>, de soutenir ses forces militaires et de
-        participer activement au développement du village.
+        Nos membres proviennent de différentes sections du village. Cette diversité nous offre
+        une <strong>vision globale</strong> de ce qu'il se passe au sein de Konoha — non pour
+        nous immiscer dans les affaires des autres, mais pour transmettre nos observations au
+        <strong>Conseil du Feu</strong> et contribuer, à notre échelle, à l'évolution et à la
+        stabilité du village.
+      </p>
+      <p>
+        Nous ne prétendons pas accéder au titre de Hokage, même si cela représenterait un
+        immense honneur. Notre ambition est différente : devenir une <strong>force réelle et
+        reconnue</strong>, capable de soutenir et de renforcer les armées de Konoha. La
+        confiance qui unit nos membres nous a permis de gagner en maturité et de grandir
+        ensemble.
       </p>
     </div>
 
     <div class="avenir__cards">
       <div class="avenir__card reveal">
         <div class="avenir__icon">◈</div>
-        <h3>Des stratégies variées</h3>
-        <p>La diversité des profils nourrit une pensée tactique riche et adaptable à chaque situation.</p>
+        <h3>Un exemple à suivre</h3>
+        <p>Devenir une référence pour chaque ninja de Konoha souhaitant contribuer activement à son village.</p>
       </div>
       <div class="avenir__card reveal">
         <div class="avenir__icon">⛨</div>
-        <h3>Des collaborations entre sections</h3>
-        <p>Des ponts solides entre les différentes branches de Konoha pour agir d'un seul tenant.</p>
+        <h3>Veiller les uns sur les autres</h3>
+        <p>Encore jeunes mais déjà responsables, nous nous guidons mutuellement comme une même famille.</p>
       </div>
       <div class="avenir__card reveal">
         <div class="avenir__icon">❖</div>
-        <h3>Une compréhension du village</h3>
-        <p>Une lecture fine des besoins de Konoha, au plus près de la réalité du terrain.</p>
+        <h3>Renforcer Konoha</h3>
+        <p>Identifier forces et faiblesses des sections pour améliorer l'organisation interne du village.</p>
+      </div>
+    </div>
+
+    <div class="affiliated reveal">
+      <h3 class="affiliated__title">Structures affiliées — en projet</h3>
+      <p class="affiliated__sub">Des infrastructures capables de générer des revenus et d'accroître l'influence de la Division et du village.</p>
+      <div class="affiliated__grid">
+        <span class="affiliated__chip"><b>學</b>Académie privée</span>
+        <span class="affiliated__chip"><b>商</b>Échoppes</span>
+        <span class="affiliated__chip"><b>食</b>Restaurants</span>
+        <span class="affiliated__chip"><b>宿</b>Auberges</span>
+        <span class="affiliated__chip"><b>財</b>Infrastructures</span>
       </div>
     </div>
   </section>
 
-  <!-- ====================== ACADÉMIE HI SHIN ====================== -->
+  <!-- ====================== 05 · ACADÉMIE ====================== -->
   <section class="section section--academie" id="academie">
     <div class="academie__overlay"></div>
     <div class="academie__kanji" aria-hidden="true">學</div>
 
     <div class="section__head section__head--light reveal">
-      <span class="section__index">04</span>
-      <span class="section__kicker">Le projet majeur</span>
+      <span class="section__index">05</span>
+      <span class="section__kicker">Former les shinobi de demain</span>
       <h2 class="section__title">Académie Hi Shin</h2>
-      <p class="section__sub">Former aujourd'hui les shinobi de demain.</p>
-    </div>
-
-    <div class="academie__intro reveal">
-      <p class="lead">
-        L'Académie Hi Shin représente l'un des projets majeurs de la Division.
-        Contrairement à une formation classique, elle propose un enseignement plus poussé,
-        plus réaliste et plus spécialisé, destiné aux jeunes ninjas prometteurs souhaitant
-        dépasser les limites d'un apprentissage traditionnel.
+      <p class="section__sub">
+        Des bases solides et des connaissances avancées, pensées pour préparer les jeunes
+        ninjas aux réalités du terrain comme à leur futur rôle au sein du village.
       </p>
     </div>
 
-    <div class="academie__columns">
-      <div class="academie__col reveal">
-        <h3 class="academie__col-title"><span class="academie__col-mark">稽</span>Le programme</h3>
-        <ul class="academie__list">
-          <li>Des cours avancés</li>
-          <li>Des exercices tactiques</li>
-          <li>Des simulations réalistes</li>
-          <li>Des entraînements spécialisés</li>
-          <li>Des mises en situation proches du terrain réel</li>
+    <div class="courses">
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">忍</span><h3>Ninjutsu &amp; maîtrise du chakra</h3></div>
+        <ul class="course__list">
+          <li>Comprendre le fonctionnement du chakra</li>
+          <li>Améliorer son contrôle</li>
+          <li>Gérer sa consommation</li>
+          <li>Développer une meilleure utilisation des techniques</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="academie__col reveal">
-        <h3 class="academie__col-title"><span class="academie__col-mark">志</span>Former des shinobi capables…</h3>
-        <ul class="academie__list academie__list--goals">
-          <li>De réfléchir</li>
-          <li>De s'adapter</li>
-          <li>D'analyser</li>
-          <li>De protéger leurs alliés</li>
-          <li>D'agir efficacement dans des situations complexes</li>
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">体</span><h3>Taijutsu &amp; arts shinobi</h3></div>
+        <ul class="course__list">
+          <li>Combat au corps-à-corps</li>
+          <li>Réflexes et déplacements</li>
+          <li>Endurance et condition physique</li>
+          <li>Techniques physiques en situation réelle</li>
         </ul>
-      </div>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">交</span><h3>Diplomatie avancée</h3></div>
+        <ul class="course__list">
+          <li>Négocier et comprendre les alliances</li>
+          <li>Gérer les tensions</li>
+          <li>Représenter correctement son village</li>
+          <li>Adapter son comportement à ses interlocuteurs</li>
+        </ul>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">略</span><h3>Théorie de combat</h3></div>
+        <ul class="course__list">
+          <li>Étude des stratégies</li>
+          <li>Anticipation des mouvements ennemis</li>
+          <li>Analyse du terrain &amp; gestion d'escouade</li>
+          <li>Prise de décision rapide</li>
+        </ul>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">鍛</span><h3>Forge &amp; entretien</h3></div>
+        <ul class="course__list">
+          <li>Création d'armes</li>
+          <li>Entretien des équipements</li>
+          <li>Matériaux utilisés</li>
+          <li>Méthodes d'amélioration du matériel</li>
+        </ul>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">財</span><h3>Économie &amp; gestion</h3></div>
+        <ul class="course__list">
+          <li>Gestion des ryos</li>
+          <li>Organisation des ressources</li>
+          <li>Récompenses de mission</li>
+          <li>Commerce et logistique</li>
+        </ul>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">析</span><h3>Sciences &amp; analyse</h3></div>
+        <ul class="course__list">
+          <li>Matières et phénomènes naturels</li>
+          <li>Composants dangereux</li>
+          <li>Bases des poisons et substances</li>
+          <li>Compréhension de l'environnement</li>
+        </ul>
+      </article>
+
+      <article class="course reveal">
+        <div class="course__head"><span class="course__mark">医</span><h3>Médecine &amp; assistance</h3></div>
+        <ul class="course__list">
+          <li>Premiers soins</li>
+          <li>Stabilisation d'un blessé</li>
+          <li>Réflexes médicaux d'urgence</li>
+          <li>Assistance en mission</li>
+        </ul>
+      </article>
     </div>
 
     <p class="academie__closing reveal">
       L'objectif n'est pas uniquement de former des combattants puissants, mais des
-      <strong>shinobi complets</strong>, lucides et fidèles à leurs alliés.
+      <strong>shinobi complets</strong> — capables de réfléchir, de s'adapter, d'analyser et de
+      protéger leurs alliés dans les situations les plus complexes.
     </p>
   </section>
 
-  <!-- ====================== VALEURS ====================== -->
+  <!-- ====================== 06 · LA FORGE ====================== -->
+  <section class="section section--forge" id="forge">
+    <div class="forge__kanji" aria-hidden="true">鍛</div>
+    <div class="section__head reveal">
+      <span class="section__index">06</span>
+      <span class="section__kicker">Enma Kinzetsu · Maître forgeron</span>
+      <h2 class="section__title">La Forge</h2>
+      <p class="section__sub">
+        Un shinobi fort est un shinobi équipé pour se battre. Reconnu pour la qualité de son
+        travail, Enma Kinzetsu dirige la forge et y dispense un enseignement permanent.
+      </p>
+    </div>
+
+    <div class="forge__grid">
+      <article class="forge-card reveal">
+        <h3 class="forge-card__title"><span>装</span>Gestion d'équipement</h3>
+        <ul class="forge-card__list">
+          <li>Équipement de guerre adapté à chaque mission</li>
+          <li>Armes sur mesure : sabres, kunai, shuriken…</li>
+          <li>Vente de services pour financer le village</li>
+          <li>Prise de commande du Haut Commandement &amp; du Domaine Militaire</li>
+        </ul>
+      </article>
+
+      <article class="forge-card reveal">
+        <h3 class="forge-card__title"><span>未</span>L'avenir de la Forge</h3>
+        <p class="forge-card__text">
+          Nos ninjas expérimentent encore cet art ; bien des savoir-faire s'apprendront avec le
+          temps, parfois dans des contrées reculées comme le Pays du Fer. Ce qui est simple
+          aujourd'hui n'est que la faible qualité d'un début. Demain, nous forgerons des
+          équipements <strong>robustes, durables et protecteurs</strong> — gage de la pérennité
+          de nos ninjas et de l'avenir de Konoha.
+        </p>
+      </article>
+    </div>
+
+    <blockquote class="forge__quote reveal">
+      « Un katana émoussé peut à peine trancher du bois… une lame de haute qualité, elle, peut
+      fendre l'acier. »
+    </blockquote>
+  </section>
+
+  <!-- ====================== 07 · VALEURS ====================== -->
   <section class="section section--valeurs" id="valeurs">
     <div class="section__head reveal">
-      <span class="section__index">05</span>
+      <span class="section__index">07</span>
       <span class="section__kicker">Le cœur de la Hi Shin</span>
       <h2 class="section__title">Les Valeurs de la Hi Shin</h2>
       <p class="section__sub">
@@ -286,28 +489,23 @@
 
     <div class="valeurs__grid">
       <div class="valeur reveal" data-kanji="信">
-        <span class="valeur__kanji">信</span>
-        <h3>La Confiance</h3>
+        <span class="valeur__kanji">信</span><h3>La Confiance</h3>
         <p>Le socle invisible qui lie chaque membre aux autres.</p>
       </div>
       <div class="valeur reveal" data-kanji="絆">
-        <span class="valeur__kanji">絆</span>
-        <h3>La Solidarité</h3>
-        <p>Personne n'avance seul&nbsp;; la force naît du collectif.</p>
+        <span class="valeur__kanji">絆</span><h3>La Solidarité</h3>
+        <p>Personne n'avance seul ; la force naît du collectif.</p>
       </div>
       <div class="valeur reveal" data-kanji="礼">
-        <span class="valeur__kanji">礼</span>
-        <h3>Le Respect</h3>
+        <span class="valeur__kanji">礼</span><h3>Le Respect</h3>
         <p>Envers ses alliés, ses adversaires et soi-même.</p>
       </div>
       <div class="valeur reveal" data-kanji="律">
-        <span class="valeur__kanji">律</span>
-        <h3>La Discipline</h3>
+        <span class="valeur__kanji">律</span><h3>La Discipline</h3>
         <p>La rigueur qui transforme l'effort en maîtrise.</p>
       </div>
       <div class="valeur reveal" data-kanji="進">
-        <span class="valeur__kanji">進</span>
-        <h3>Avancer Ensemble</h3>
+        <span class="valeur__kanji">進</span><h3>Avancer Ensemble</h3>
         <p>La volonté constante de progresser, unis sous une même bannière.</p>
       </div>
     </div>
@@ -316,8 +514,8 @@
       <div class="family__line"></div>
       <p>
         Chaque membre représente une partie de la Division. Chaque action, chaque victoire,
-        chaque erreur influence l'ensemble du groupe. C'est pourquoi la Hi Shin considère
-        ses membres non pas comme de simples soldats…
+        chaque erreur influence l'ensemble du groupe. C'est pourquoi la Hi Shin considère ses
+        membres non pas comme de simples soldats…
         <strong>mais comme une véritable famille avançant sous une même bannière.</strong>
       </p>
       <div class="family__line"></div>
@@ -328,17 +526,17 @@
   <section class="closing">
     <div class="closing__kanji" aria-hidden="true">飛信</div>
     <blockquote class="closing__quote reveal">
-      « Peu importe nos origines, nos différences ou nos spécialités… tant que nous
-      avançons ensemble, la Hi Shin continuera de grandir. »
+      « Peu importe nos origines, nos différences ou nos spécialités… tant que nous avançons
+      ensemble, la Hi Shin continuera de grandir. »
     </blockquote>
   </section>
+
+  </main>
 
   <!-- ====================== FOOTER ====================== -->
   <footer class="footer">
     <div class="footer__inner">
-      <svg class="footer__emblem" viewBox="0 0 400 400" aria-hidden="true">
-        <use href="#emblem-symbol"></use>
-      </svg>
+      <svg class="footer__emblem" viewBox="0 0 400 400" aria-hidden="true"><use href="#emblem-symbol"></use></svg>
       <div class="footer__brand">
         <strong>DIVISION HI SHIN</strong>
         <span>飛信 · Konoha</span>
@@ -346,13 +544,44 @@
       <nav class="footer__nav">
         <a href="#accueil">Accueil</a>
         <a href="#division">La Division</a>
-        <a href="#structure">Structure</a>
+        <a href="#unites">Unités</a>
+        <a href="#doctrine">Doctrine</a>
         <a href="#academie">Académie</a>
+        <a href="#forge">Forge</a>
         <a href="#valeurs">Valeurs</a>
       </nav>
     </div>
     <p class="footer__copy">Division Hi Shin — Une lame seule peut se briser, mais plusieurs volontés deviennent une armée.</p>
   </footer>
+
+  <!-- ====================== ADMIN EDIT MODE ====================== -->
+  <button id="adminLock" class="admin-lock" title="Mode administrateur" aria-label="Mode administrateur">&#128274;</button>
+
+  <div id="adminBar" class="admin-bar" hidden>
+    <span class="admin-bar__title">✎ Mode édition</span>
+    <span id="adminStatus" class="admin-bar__status">Cliquez sur un texte pour le modifier.</span>
+    <div class="admin-bar__actions">
+      <button id="adminExport" class="admin-btn admin-btn--primary">⬇ Exporter le site (HTML)</button>
+      <button id="adminExportJson" class="admin-btn">⬇ Exporter les textes (JSON)</button>
+      <button id="adminReset" class="admin-btn admin-btn--danger">↺ Réinitialiser</button>
+      <button id="adminExit" class="admin-btn">✕ Quitter</button>
+    </div>
+  </div>
+
+  <!-- Admin password modal -->
+  <div id="adminModal" class="admin-modal" hidden>
+    <div class="admin-modal__box" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+      <div class="admin-modal__mark">飛</div>
+      <h3 class="admin-modal__title" id="adminModalTitle">Accès administrateur</h3>
+      <p class="admin-modal__text">Entrez le mot de passe pour activer le mode édition.</p>
+      <input type="password" id="adminPass" class="admin-modal__input" placeholder="Mot de passe" autocomplete="off" />
+      <p id="adminError" class="admin-modal__error" hidden>Mot de passe incorrect.</p>
+      <div class="admin-modal__actions">
+        <button id="adminCancel" class="admin-btn">Annuler</button>
+        <button id="adminEnter" class="admin-btn admin-btn--primary">Entrer</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ====================== EMBLEM SYMBOL (reusable SVG) ====================== -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -370,30 +599,20 @@
       <path id="eBottomArc" d="M 70,200 A 130,130 0 0 0 330,200" fill="none" />
 
       <symbol id="emblem-symbol" viewBox="0 0 400 400">
-        <!-- outer disc -->
         <circle cx="200" cy="200" r="198" fill="#04060c" />
         <circle cx="200" cy="200" r="192" fill="none" stroke="url(#eRing)" stroke-width="3" />
         <circle cx="200" cy="200" r="172" fill="#070b14" />
-
-        <!-- serpent / dragon ring -->
         <circle class="emblem-ring" cx="200" cy="200" r="152" fill="none"
                 stroke="#2f5fa6" stroke-width="11" stroke-dasharray="1.5 11" stroke-linecap="round" />
         <circle cx="200" cy="200" r="143" fill="url(#eCore)" stroke="#3a6bb5" stroke-width="1.4" />
         <circle cx="200" cy="200" r="138" fill="none" stroke="#13243d" stroke-width="1" />
-
-        <!-- arced text -->
         <text class="emblem-text"><textPath href="#eTopArc" startOffset="50%" text-anchor="middle">DIVISION</textPath></text>
         <text class="emblem-text"><textPath href="#eBottomArc" startOffset="50%" text-anchor="middle">HI SHIN</textPath></text>
-
-        <!-- corner sparks -->
         <g class="emblem-sparks" fill="#3a6bb5">
           <path d="M200 70 l5 9 -5 9 -5 -9 z" />
           <path d="M200 312 l5 9 -5 9 -5 -9 z" />
         </g>
-
-        <!-- center kanji -->
         <text x="200" y="232" class="emblem-kanji" text-anchor="middle">飛</text>
-        <!-- banner -->
         <rect x="158" y="270" width="84" height="30" rx="3" fill="#0a1322" stroke="#2f5fa6" stroke-width="1" />
         <text x="200" y="292" class="emblem-banner" text-anchor="middle">飛信</text>
       </symbol>

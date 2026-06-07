@@ -135,3 +135,203 @@
     }, { passive: true });
   }
 })();
+
+/* =====================================================================
+   ADMIN EDIT MODE
+   ---------------------------------------------------------------------
+   • Cliquez sur le cadenas (en bas à gauche) ou faites Ctrl+Maj+E.
+   • Mot de passe par défaut : "hishin"  →  changez-le ci-dessous.
+   • Les modifications sont enregistrées dans CE navigateur (localStorage).
+   • « Exporter le site » télécharge un index.html avec vos textes intégrés.
+   ===================================================================== */
+(function () {
+  'use strict';
+
+  var ADMIN_PASS = 'hishin';                 // ← mot de passe administrateur
+  var STORE_KEY  = 'hishin_content_v1';      // clé de sauvegarde locale
+
+  var root = document.querySelector('[data-edit-root]');
+  if (!root) return;
+
+  var SELECTOR = 'h1, h2, h3, h4, p, li, blockquote, .section__kicker';
+  var els = Array.prototype.slice.call(root.querySelectorAll(SELECTOR));
+
+  // Assign stable keys by document order
+  els.forEach(function (el, i) { el.setAttribute('data-edit', 'e' + i); });
+
+  // ---- storage helpers ----
+  function loadMap() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveMap(map) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(map)); return true; }
+    catch (e) { return false; }
+  }
+
+  // ---- apply saved overrides on every load ----
+  var saved = loadMap();
+  els.forEach(function (el) {
+    var k = el.getAttribute('data-edit');
+    if (saved[k] != null) el.innerHTML = saved[k];
+  });
+
+  // ---- elements ----
+  var lock    = document.getElementById('adminLock');
+  var bar     = document.getElementById('adminBar');
+  var status  = document.getElementById('adminStatus');
+  var bExport = document.getElementById('adminExport');
+  var bJson   = document.getElementById('adminExportJson');
+  var bReset  = document.getElementById('adminReset');
+  var bExit   = document.getElementById('adminExit');
+  var modal   = document.getElementById('adminModal');
+  var passIn  = document.getElementById('adminPass');
+  var errEl   = document.getElementById('adminError');
+  var bEnter  = document.getElementById('adminEnter');
+  var bCancel = document.getElementById('adminCancel');
+
+  var editing = false;
+  var statusTimer = null;
+
+  function setStatus(msg, saved) {
+    if (!status) return;
+    status.textContent = msg;
+    status.classList.toggle('is-saved', !!saved);
+    if (saved) {
+      clearTimeout(statusTimer);
+      statusTimer = setTimeout(function () {
+        status.textContent = 'Cliquez sur un texte pour le modifier.';
+        status.classList.remove('is-saved');
+      }, 2200);
+    }
+  }
+
+  function enter() {
+    editing = true;
+    document.body.classList.add('admin-mode');
+    if (bar) bar.hidden = false;
+    els.forEach(function (el) {
+      el.setAttribute('contenteditable', 'true');
+      el.spellcheck = false;
+    });
+    setStatus('Mode édition activé — cliquez sur un texte pour le modifier.');
+  }
+
+  function exit() {
+    editing = false;
+    document.body.classList.remove('admin-mode');
+    if (bar) bar.hidden = true;
+    els.forEach(function (el) { el.removeAttribute('contenteditable'); });
+  }
+
+  function openModal() {
+    if (!modal) return;
+    modal.hidden = false;
+    if (errEl) errEl.hidden = true;
+    if (passIn) { passIn.value = ''; setTimeout(function () { passIn.focus(); }, 40); }
+  }
+  function closeModal() { if (modal) modal.hidden = true; }
+  function tryEnter() {
+    if (passIn && passIn.value === ADMIN_PASS) { closeModal(); enter(); }
+    else { if (errEl) errEl.hidden = false; if (passIn) passIn.select(); }
+  }
+  function toggle() {
+    if (editing) { exit(); return; }
+    openModal();
+  }
+
+  // ---- save on edit ----
+  els.forEach(function (el) {
+    el.addEventListener('input', function () {
+      var map = loadMap();
+      map[el.getAttribute('data-edit')] = el.innerHTML;
+      setStatus(saveMap(map) ? 'Modifications enregistrées ✓' : 'Échec de sauvegarde locale', true);
+    });
+    // keep edits clean: paste as plain text
+    el.addEventListener('paste', function (e) {
+      e.preventDefault();
+      var text = (e.clipboardData || window.clipboardData).getData('text');
+      document.execCommand('insertText', false, text);
+    });
+  });
+
+  // ---- download helper ----
+  function download(filename, content, type) {
+    var blob = new Blob([content], { type: type || 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 120);
+  }
+
+  // ---- export full HTML with edits baked in ----
+  function exportHTML() {
+    var clone = document.documentElement.cloneNode(true);
+    ['#adminBar', '#adminLock', '#hsParticleAnim'].forEach(function (sel) {
+      var n = clone.querySelector(sel); if (n) n.remove();
+    });
+    var hp = clone.querySelector('#heroParticles'); if (hp) hp.innerHTML = '';
+    var body = clone.querySelector('body'); if (body) body.classList.remove('admin-mode');
+    Array.prototype.forEach.call(clone.querySelectorAll('[contenteditable]'), function (n) {
+      n.removeAttribute('contenteditable'); n.removeAttribute('spellcheck');
+    });
+    Array.prototype.forEach.call(clone.querySelectorAll('[data-edit]'), function (n) {
+      n.removeAttribute('data-edit');
+    });
+    Array.prototype.forEach.call(clone.querySelectorAll('.reveal.is-visible'), function (n) {
+      n.classList.remove('is-visible');
+    });
+    var n1 = clone.querySelector('#nav');       if (n1) n1.classList.remove('is-scrolled');
+    var n2 = clone.querySelector('#navLinks');  if (n2) n2.classList.remove('is-open');
+    var n3 = clone.querySelector('#navToggle'); if (n3) n3.classList.remove('is-open');
+
+    download('index.html', '<!DOCTYPE html>\n' + clone.outerHTML, 'text/html;charset=utf-8');
+    setStatus('Site exporté — remplacez votre index.html par le fichier téléchargé.', true);
+  }
+
+  function exportJSON() {
+    download('hishin-textes.json', JSON.stringify(loadMap(), null, 2), 'application/json;charset=utf-8');
+    setStatus('Textes exportés en JSON.', true);
+  }
+
+  // ---- reset (two-step confirmation, no blocking dialog) ----
+  var resetArmed = false, resetTimer = null;
+  function reset() {
+    if (!resetArmed) {
+      resetArmed = true;
+      if (bReset) { bReset.textContent = '↺ Confirmer ?'; bReset.classList.add('is-armed'); }
+      resetTimer = setTimeout(function () {
+        resetArmed = false;
+        if (bReset) { bReset.textContent = '↺ Réinitialiser'; bReset.classList.remove('is-armed'); }
+      }, 3000);
+      return;
+    }
+    clearTimeout(resetTimer);
+    localStorage.removeItem(STORE_KEY);
+    location.reload();
+  }
+
+  // ---- wire up ----
+  if (lock)    lock.addEventListener('click', toggle);
+  if (bExit)   bExit.addEventListener('click', exit);
+  if (bExport) bExport.addEventListener('click', exportHTML);
+  if (bJson)   bJson.addEventListener('click', exportJSON);
+  if (bReset)  bReset.addEventListener('click', reset);
+
+  if (bEnter)  bEnter.addEventListener('click', tryEnter);
+  if (bCancel) bCancel.addEventListener('click', closeModal);
+  if (passIn)  passIn.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); tryEnter(); }
+    else if (e.key === 'Escape') { closeModal(); }
+  });
+  if (modal) modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'E' || e.key === 'e')) {
+      e.preventDefault(); toggle();
+    }
+  });
+})();
